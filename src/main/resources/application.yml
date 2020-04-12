@@ -1,2 +1,24 @@
-server:
-  port: 7777
+#数据源配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sbc-pay?useUnicode=true&useSSL=false&characterEncoding=utf8
+    name: root
+    password: zgl123
+
+#mybaits-plus配置
+plusconfig:
+  #父包路径
+  parent: com.zgl.generatechs
+  #模块名
+  moduleName:
+  #生成文件输出目录，不填默认位当前项目src/main/code目录
+  outputDir:
+  #实体是否生成swagger注解
+  swaggerOpen: true
+  #实体是否为lombok模型
+  lombokModel: true
+  #是否覆盖已有文件
+  fileOverride: true
+  #生成类的作者签名
+  author: zgl
