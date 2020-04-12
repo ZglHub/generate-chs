@@ -1,0 +1,1 @@
+mysql数据库自动生成带有中文注释的mybaits、mybaits-plus java bean代码
