@@ -13,6 +13,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+/**
+ *
+ * 运行此mian方法可以自动生成mybaits-plus相关的java bean代码
+ *
+ */
 @SpringBootApplication
 public class PlusGenerateChsApplication {
 
@@ -54,6 +59,17 @@ public class PlusGenerateChsApplication {
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
         strategy.setRestControllerStyle(true);
         strategy.setEntityLombokModel(Boolean.parseBoolean(plusGenerateConfig.getLombokModel()));
+        String includeTables = plusGenerateConfig.getInclude();
+        if (StringUtils.isNotBlank(includeTables)){
+            String[] tableArray = includeTables.split(",");
+            strategy.setInclude(tableArray);
+        }
+        if (StringUtils.isNotBlank(plusGenerateConfig.getTablePrefix())){
+            strategy.setTablePrefix(plusGenerateConfig.getTablePrefix());
+        }
+        if (StringUtils.isNotBlank(plusGenerateConfig.getFieldPrefix())){
+            strategy.setFieldPrefix(plusGenerateConfig.getFieldPrefix());
+        }
         mpg.setStrategy(strategy);
 
         // 包配置

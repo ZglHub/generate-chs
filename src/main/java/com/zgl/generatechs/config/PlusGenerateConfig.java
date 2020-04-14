@@ -28,4 +28,10 @@ public class PlusGenerateConfig {
 
     private String author;
 
+    private String include;
+
+    private String tablePrefix;
+
+    private String fieldPrefix;
+
 }

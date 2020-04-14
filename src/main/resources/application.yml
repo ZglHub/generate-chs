@@ -2,9 +2,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/sbc-pay?useUnicode=true&useSSL=false&characterEncoding=utf8
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&useSSL=false&characterEncoding=utf8
     name: root
-    password: zgl123
+    password: root
 
 #mybaits-plus配置
 plusconfig:
@@ -22,3 +22,9 @@ plusconfig:
   fileOverride: true
   #生成类的作者签名
   author: zgl
+  #需要包含的表名，多个表面使用英文逗号间隔
+  include: t_course_info,user_info
+  #需要去除的表前缀，不去除配置空值
+  tablePrefix: t_
+  #需要去除的字段前缀，不去除配置空值
+  fieldPrefix:
